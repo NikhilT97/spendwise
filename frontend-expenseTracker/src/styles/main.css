@@ -1,0 +1,211 @@
+:root {
+  --brand: #D97757;
+  --brand-hover: #c4674a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f9f9f7;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: white;
+  border: 0.5px solid #e5e5e3;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.brand-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+}
+.brand-name span { color: #888; font-weight: 400; }
+.brand-name .dot { color: var(--brand); }
+
+.form-title { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+.form-sub { font-size: 14px; color: #666; margin-bottom: 1.75rem; }
+
+.field { margin-bottom: 1rem; }
+.field label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+.field input, .field select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 0.5px solid #e5e5e3;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  color: #1a1a1a;
+}
+.field input:focus, .field select:focus {
+  border-color: var(--brand);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 9px;
+  background: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.btn-primary:hover { background: var(--brand-hover); }
+
+.link-row {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-top: 1rem;
+}
+.link-row a { color: var(--brand); text-decoration: none; font-weight: 500; }
+
+.dashboard {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.dash-title { font-size: 22px; font-weight: 500; margin-bottom: 2px; }
+.dash-user { font-size: 14px; color: #666; }
+
+.btn-logout {
+  background: none;
+  border: 0.5px solid #e5e5e3;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+}
+.btn-logout:hover { color: var(--brand); border-color: var(--brand); }
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.metric {
+  background: #f4f4f2;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.metric-label { font-size: 12px; color: #666; margin-bottom: 4px; }
+.metric-value { font-size: 22px; font-weight: 500; color: #1a1a1a; }
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.card {
+  background: white;
+  border: 0.5px solid #e5e5e3;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.expense-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 0.5px solid #f0f0ee;
+}
+.expense-row:last-child { border-bottom: none; }
+
+.expense-info { display: flex; flex-direction: column; gap: 2px; }
+.expense-name { font-size: 14px; color: #1a1a1a; }
+.expense-cat { font-size: 12px; color: #888; }
+.expense-right { display: flex; align-items: center; gap: 10px; }
+.expense-amt { font-size: 14px; font-weight: 500; color: #1a1a1a; }
+
+.btn-del {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 2px;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+.btn-del:hover { opacity: 1; }
+
+@media (prefers-color-scheme: dark) {
+  body { background: #1a1a1a; color: #f0f0ee; }
+
+  .auth-card, .card {
+    background: #242424;
+    border-color: #333;
+  }
+
+  .field input, .field select {
+    background: #2e2e2e;
+    border-color: #444;
+    color: #f0f0ee;
+  }
+
+  .field input::placeholder { color: #555; }
+  .field label { color: #888; }
+
+  .metric { background: #2e2e2e; }
+  .metric-value { color: #f0f0ee; }
+  .metric-label { color: #888; }
+
+  .expense-row { border-color: #333; }
+  .expense-name { color: #f0f0ee; }
+  .expense-amt { color: #f0f0ee; }
+
+  .btn-logout { border-color: #444; color: #888; }
+  .form-title, .dash-title, .card-title { color: #f0f0ee; }
+  .form-sub, .dash-user { color: #888; }
+  .brand-name { color: #f0f0ee; }
+  .link-row { color: #888; }
+}
+
+@media (max-width: 640px) {
+  .dash-grid { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+}

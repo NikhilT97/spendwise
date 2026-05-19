@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://spendwise-three-sigma.vercel.app/",
+    origin: "https://spendwise-three-sigma.vercel.app",
     credentials: true,
   }),
 );
